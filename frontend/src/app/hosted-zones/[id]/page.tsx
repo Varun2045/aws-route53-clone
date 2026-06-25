@@ -38,7 +38,7 @@ export default function HostedZoneDetailPage() {
   const params = useParams();
   const router = useRouter();
   const zoneId = params.id as string;
-  const { fetchApi, addToast } = useApp();
+  const { fetchApi, addToast, user } = useApp();
 
   // Detail State
   const [zone, setZone] = useState<HostedZoneDetail | null>(null);
@@ -86,6 +86,7 @@ export default function HostedZoneDetailPage() {
 
   // Fetch Zone and Records
   const fetchZoneDetails = async () => {
+    if (!user) return;
     setLoading(true);
     try {
       // 1. Fetch zone basic info

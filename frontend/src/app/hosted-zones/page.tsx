@@ -17,7 +17,7 @@ interface HostedZone {
 }
 
 export default function HostedZonesPage() {
-  const { fetchApi, addToast } = useApp();
+  const { fetchApi, addToast, user } = useApp();
   
   // State
   const [zones, setZones] = useState<HostedZone[]>([]);
@@ -51,6 +51,7 @@ export default function HostedZonesPage() {
 
   // Fetch zones
   const fetchZones = async () => {
+    if (!user) return;
     setLoading(true);
     try {
       const url = searchQuery.trim() 
