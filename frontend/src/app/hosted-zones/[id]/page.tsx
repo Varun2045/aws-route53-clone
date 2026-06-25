@@ -524,7 +524,7 @@ export default function HostedZoneDetailPage() {
             ) : (
               records.map((rec) => {
                 const isSelected = selectedRecordIds.includes(rec.id);
-                const isApexNsOrSoa = zone && rec.name === zone.name && (rec.type === 'NS' || rec.type === 'SOA');
+                const isApexNsOrSoa = !!(zone && rec.name === zone.name && (rec.type === 'NS' || rec.type === 'SOA'));
                 
                 return (
                   <tr 
