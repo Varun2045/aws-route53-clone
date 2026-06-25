@@ -1,0 +1,71 @@
+.sidebar {
+  width: var(--sidebar-width);
+  background-color: var(--aws-sidebar-bg);
+  border-right: 1px solid var(--aws-border);
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  padding: 16px 0;
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px 20px 16px 20px;
+  color: var(--aws-text);
+  border-bottom: 1px solid var(--aws-border);
+  margin-bottom: 12px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--aws-text-secondary);
+  border-left: 3px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.navLink:hover {
+  background-color: var(--aws-row-hover);
+  color: var(--aws-text);
+  text-decoration: none;
+}
+
+.active {
+  background-color: var(--aws-row-hover);
+  color: var(--aws-blue);
+  font-weight: 600;
+  border-left-color: var(--aws-blue);
+}
+
+.linkText {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mockedBadge {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: var(--aws-border);
+  color: var(--aws-text-secondary);
+  padding: 1px 4px;
+  border-radius: 4px;
+  border: 1px solid var(--aws-border);
+  opacity: 0.8;
+}

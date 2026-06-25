@@ -1,0 +1,220 @@
+.header {
+  height: 50px;
+  background-color: var(--aws-header-bg);
+  border-bottom: 1px solid var(--aws-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  color: #ffffff;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.awsLogo {
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #ff9900, #ec7211);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 2px;
+}
+
+.serviceDivider {
+  color: #4f5a65;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.serviceName {
+  font-weight: 500;
+  font-size: 15px;
+  color: #e1e4e6;
+}
+
+.middle {
+  flex: 0 1 480px;
+  margin: 0 16px;
+}
+
+.searchWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  color: #7f8c9a;
+  pointer-events: none;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 6px 12px 6px 36px;
+  background-color: #2a3440;
+  border: 1px solid #4f5a65;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #ffffff;
+  outline: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.searchInput:focus {
+  background-color: #ffffff;
+  border-color: var(--aws-orange);
+  color: #1a1a1a;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.themeBtn {
+  background: none;
+  border: none;
+  color: #aab7c4;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.themeBtn:hover {
+  background-color: #2a3440;
+  color: #ffffff;
+}
+
+.regionBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #2a3440;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #e1e4e6;
+  border: 1px solid #4f5a65;
+  font-weight: 500;
+}
+
+.regionDot {
+  width: 6px;
+  height: 6px;
+  background-color: #00ca9a;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #00ca9a;
+}
+
+.accountMenu {
+  position: relative;
+  cursor: pointer;
+}
+
+.accountTrigger {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.accountTrigger:hover {
+  background-color: #2a3440;
+}
+
+.accountUser {
+  font-weight: 600;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.accountNumber {
+  font-size: 12px;
+  color: #aab7c4;
+}
+
+.caretIcon {
+  color: #aab7c4;
+}
+
+/* Account Dropdown Menu */
+.dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 6px;
+  width: 220px;
+  background-color: #1e2530;
+  border: 1px solid #354150;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  display: none;
+  flex-direction: column;
+  z-index: 110;
+  overflow: hidden;
+}
+
+.accountMenu:hover .dropdown,
+.dropdown:hover {
+  display: flex;
+}
+
+.dropdownHeader {
+  padding: 12px;
+  font-size: 12px;
+  color: #aab7c4;
+  background-color: #161b22;
+}
+
+.dropdownHeader strong {
+  display: block;
+  font-size: 13px;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.dropdownDivider {
+  height: 1px;
+  background-color: #354150;
+}
+
+.logoutBtn {
+  background: none;
+  border: none;
+  color: #f25c5c;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.logoutBtn:hover {
+  background-color: #293444;
+}

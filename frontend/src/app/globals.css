@@ -1,0 +1,192 @@
+/* CSS Custom Properties for AWS Console Theme */
+:root {
+  --aws-bg: #f2f3f3;
+  --aws-panel-bg: #ffffff;
+  --aws-header-bg: #161b22;
+  --aws-sidebar-bg: #ffffff;
+  --aws-text: #16191f;
+  --aws-text-secondary: #5f6b7a;
+  --aws-border: #eaeded;
+  --aws-orange: #ff9900;
+  --aws-orange-hover: #ec7211;
+  --aws-blue: #0073bb;
+  --aws-blue-hover: #005a92;
+  --aws-row-hover: #f9f9f9;
+  --aws-table-header-bg: #fafafa;
+  --aws-shadow: 0 1px 1px 0 rgba(0, 28, 36, 0.15);
+  --aws-danger: #d93939;
+  --aws-danger-bg: #fffafa;
+  --aws-success: #1d8102;
+  --aws-success-bg: #f4faf2;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --sidebar-width: 250px;
+}
+
+:root[data-theme="dark"] {
+  --aws-bg: #0f1319;
+  --aws-panel-bg: #1d242e;
+  --aws-header-bg: #161b22;
+  --aws-sidebar-bg: #1d242e;
+  --aws-text: #f1f3f3;
+  --aws-text-secondary: #aab7c4;
+  --aws-border: #354150;
+  --aws-orange: #ff9900;
+  --aws-orange-hover: #ec7211;
+  --aws-blue: #54bbf8;
+  --aws-blue-hover: #38a2e1;
+  --aws-row-hover: #293444;
+  --aws-table-header-bg: #222b37;
+  --aws-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --aws-danger: #f25c5c;
+  --aws-danger-bg: #2c1a1a;
+  --aws-success: #66bb6a;
+  --aws-success-bg: #1b2e1c;
+}
+
+/* Global Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--aws-bg);
+  color: var(--aws-text);
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--aws-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--aws-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--aws-text-secondary);
+}
+
+/* Typography & Links */
+a {
+  color: var(--aws-blue);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--aws-blue-hover);
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--aws-text);
+}
+
+/* AWS Buttons */
+.aws-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s;
+  border: 1px solid transparent;
+  outline: none;
+}
+
+.aws-btn-primary {
+  background-color: var(--aws-orange);
+  color: #16191f;
+  border-color: var(--aws-orange);
+}
+.aws-btn-primary:hover {
+  background-color: var(--aws-orange-hover);
+  border-color: var(--aws-orange-hover);
+}
+
+.aws-btn-secondary {
+  background-color: var(--aws-panel-bg);
+  color: var(--aws-text);
+  border-color: var(--aws-border);
+}
+.aws-btn-secondary:hover {
+  background-color: var(--aws-row-hover);
+  border-color: var(--aws-text-secondary);
+}
+
+.aws-btn-danger {
+  background-color: var(--aws-danger);
+  color: #ffffff;
+  border-color: var(--aws-danger);
+}
+.aws-btn-danger:hover {
+  filter: brightness(0.9);
+}
+
+.aws-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--aws-border) !important;
+  color: var(--aws-text-secondary) !important;
+  border-color: var(--aws-border) !important;
+}
+
+/* AWS Form Elements */
+.aws-input, .aws-select, .aws-textarea {
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: var(--aws-panel-bg);
+  border: 1px solid var(--aws-border);
+  color: var(--aws-text);
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.aws-input:focus, .aws-select:focus, .aws-textarea:focus {
+  border-color: var(--aws-blue);
+}
+
+/* Utility Helpers */
+.flex { display: flex; }
+.align-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-1 { gap: 4px; }
+.gap-2 { gap: 8px; }
+.gap-4 { gap: 16px; }
+.w-full { width: 100%; }
+.m-b-2 { margin-bottom: 8px; }
+.m-b-4 { margin-bottom: 16px; }
+.p-4 { padding: 16px; }
+
+/* Status Badges */
+.aws-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+.aws-badge-public {
+  background-color: var(--aws-success-bg);
+  color: var(--aws-success);
+  border: 1px solid var(--aws-success);
+}
+.aws-badge-private {
+  background-color: var(--aws-danger-bg);
+  color: var(--aws-danger);
+  border: 1px solid var(--aws-danger);
+}
