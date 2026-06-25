@@ -2,7 +2,7 @@
 
 A functional clone of the Amazon Web Services (AWS) Route53 DNS management console. This application simulates the Route53 user interface, dashboards, and core DNS workflows, backing them with a FastAPI REST API and persistent SQLite database.
 
-![Demo GIF](./assets/demo1.gif)
+![Demo GIF](./assets/demo.gif)
 
 ## Live Demo
 
