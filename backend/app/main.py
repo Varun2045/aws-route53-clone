@@ -12,9 +12,16 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(title="AWS Route53 Clone API")
 
 # Setup CORS for the Next.js frontend
+import os
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:3000")
+origins = ["http://localhost:3000", "http://127.0.0.1:3000"]
+if FRONTEND_URL not in origins:
+    origins.append(FRONTEND_URL)
+    origins.append(FRONTEND_URL.rstrip('/'))
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
