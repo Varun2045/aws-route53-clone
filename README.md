@@ -2,10 +2,13 @@
 
 A functional clone of the Amazon Web Services (AWS) Route53 DNS management console. This application simulates the Route53 user interface, dashboards, and core DNS workflows, backing them with a FastAPI REST API and persistent SQLite database.
 
-**Live Demo URL**: [https://aws-route53-clone-liard.vercel.app](https://aws-route53-clone-liard.vercel.app)  
-**Backend API URL**: [https://aws-route53-clone-backend.onrender.com](https://aws-route53-clone-backend.onrender.com)  
+![Demo GIF](./assets/demo.gif)
 
-![Demo GIF](./assets/route53-demo.gif)
+## Live Demo
+
+- **Frontend Console (Live Web App)**: [https://aws-route53-clone-liard.vercel.app](https://aws-route53-clone-liard.vercel.app)
+- **Backend API (Uvicorn Server)**: [https://aws-route53-clone-backend.onrender.com](https://aws-route53-clone-backend.onrender.com)
+- **Interactive Swagger Docs**: [https://aws-route53-clone-backend.onrender.com/docs](https://aws-route53-clone-backend.onrender.com/docs)
 
 ## Features
 
