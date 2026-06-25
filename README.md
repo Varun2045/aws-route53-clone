@@ -5,6 +5,8 @@ A functional clone of the Amazon Web Services (AWS) Route53 DNS management conso
 **Live Demo URL**: [https://aws-route53-clone-liard.vercel.app](https://aws-route53-clone-liard.vercel.app)  
 **Backend API URL**: [https://aws-route53-clone-backend.onrender.com](https://aws-route53-clone-backend.onrender.com)  
 
+![Demo GIF](./assets/route53-demo.gif)
+
 ## Features
 
 - **Route53 UX Replication**: Clean slate UI styling resembling the AWS Management Console with light and dark theme modes.
@@ -177,9 +179,6 @@ Here is where you can showcase screenshots, GIFs, and videos of the working clon
 
 ### 3. DNS Records Panel & Form Configurations
 ![DNS Zone Details](./assets/dns-records-demo.png)
-
-### 4. Interactive Console GIF
-![Console Uptime GIF](./assets/route53-demo.gif)
 
 ---
 
