@@ -168,16 +168,18 @@ Holds specific DNS resource entries within a hosted zone.
 Here is where you can showcase screenshots, GIFs, and videos of the working clone.
 
 ### 1. Light & Dark Theme Console (Sign-in)
-![Sign In Console](./docs/login-demo.png)
+| Light Mode | Dark Mode |
+| --- | --- |
+| ![Sign In Light](./assets/loginlight.png) | ![Sign In Dark](./assets/logindark.png) |
 
 ### 2. Hosted Zones Overview Table
-![Hosted Zones Table](./docs/hosted-zones-demo.png)
+![Hosted Zones Table](./assets/hosted-zones-demo.png)
 
 ### 3. DNS Records Panel & Form Configurations
-![DNS Zone Details](./docs/dns-records-demo.png)
+![DNS Zone Details](./assets/dns-records-demo.png)
 
 ### 4. Interactive Console GIF
-![Console Uptime GIF](./docs/route53-demo.gif)
+![Console Uptime GIF](./assets/route53-demo.gif)
 
 ---
 
