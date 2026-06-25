@@ -67,13 +67,14 @@ def login(user_in: schemas.UserLogin, response: Response, db: Session = Depends(
     # Generate token
     token = auth.create_session_token(db_user.username)
     
-    # Set secure cookie
+    # Set secure cookie dynamically based on environment
+    is_prod = os.getenv("FRONTEND_URL") is not None and "localhost" not in os.getenv("FRONTEND_URL")
     response.set_cookie(
         key="session",
         value=token,
         httponly=True,
-        samesite="lax",
-        secure=False,  # Set to True in production with HTTPS
+        samesite="none" if is_prod else "lax",
+        secure=True if is_prod else False,
         max_age=86400  # 1 day
     )
     
