@@ -157,3 +157,57 @@ Holds specific DNS resource entries within a hosted zone.
 ### BIND Import & Export
 - `POST /api/hosted-zones/{zone_id}/import/bind`: Accept and parse BIND zone file uploads, adding records to the database.
 - `GET /api/hosted-zones/{zone_id}/export`: Download zone records in BIND format or JSON.
+
+---
+
+## Demo & Screenshots
+
+Here is where you can showcase screenshots, GIFs, and videos of the working clone.
+
+### 1. Light & Dark Theme Console (Sign-in)
+![Sign In Console](./docs/login-demo.png)
+
+### 2. Hosted Zones Overview Table
+![Hosted Zones Table](./docs/hosted-zones-demo.png)
+
+### 3. DNS Records Panel & Form Configurations
+![DNS Zone Details](./docs/dns-records-demo.png)
+
+### 4. Interactive Console GIF
+![Console Uptime GIF](./docs/route53-demo.gif)
+
+---
+
+## Deployment (Making it Live)
+
+Follow these steps to host the Route53 Clone application live on the internet.
+
+### 1. Deploy the Backend (FastAPI + SQLite)
+Since SQLite is file-based, it requires persistent disk mounting to ensure database records persist across container redeployments.
+
+#### Deployed on Render.com:
+1. Create a new **Web Service** on Render and link your GitHub repository.
+2. Configure settings:
+   - **Root Directory**: `backend`
+   - **Runtime**: `Python 3`
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+3. Add a **Persistent Disk** under the "Advanced" tab:
+   - **Mount Path**: `/data`
+   - **Size**: 1GB (Free tier disk)
+4. Add an **Environment Variable**:
+   - `DATABASE_URL="sqlite:////data/route53.db"` (stores your database file on the persistent disk).
+
+---
+
+### 2. Deploy the Frontend (Next.js)
+You can deploy the Next.js frontend to **Vercel** with a single click.
+
+#### Deployed on Vercel:
+1. Create a new project on Vercel and link your repository.
+2. Configure settings:
+   - **Root Directory**: `frontend`
+   - **Framework Preset**: `Next.js`
+3. Add the following **Environment Variable**:
+   - `NEXT_PUBLIC_API_URL` = `<your-deployed-render-api-url>` (e.g. `https://aws-route53-api.onrender.com`)
+4. Click **Deploy**. Vercel will build the frontend assets and host the console live.
